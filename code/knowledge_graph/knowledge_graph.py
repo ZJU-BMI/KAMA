@@ -137,6 +137,13 @@ class KnowledgeGraph(object):
         nodes_vector_list = self._entity_embedding.iloc[node_index_list, 1:]
         nodes_vector = nodes_vector_list.mean()
         return nodes_vector
+    
+    def get_unique_nodes_from_triple_by_source_node(self, source_nodes):
+        # 返回均值向量
+        node_index_list = self._get_unique_nodes_from_triple_by_source_node(source_nodes)
+        nodes_vector_list = self._entity_embedding.iloc[node_index_list, 1:]
+        nodes_vector = nodes_vector_list.mean()
+        return nodes_vector
 
     def test_matrix_a(self):
         # 如果存在从 v 到 n 的边，则节点 n 是节点 v 的邻居。
